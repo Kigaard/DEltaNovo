@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{856792C2-936F-49C3-B065-0AE669CF41A7}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="DeNovoSequencer.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DeNovoSequencer">
+        <MSBuild Projects="DeNovoSequencer.dproj"/>
+    </Target>
+    <Target Name="DeNovoSequencer:Clean">
+        <MSBuild Projects="DeNovoSequencer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DeNovoSequencer:Make">
+        <MSBuild Projects="DeNovoSequencer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DeNovoSequencer"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DeNovoSequencer:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DeNovoSequencer:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
