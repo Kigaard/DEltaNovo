@@ -1,4 +1,4 @@
-program DeNovoSequencer;
+program DEltaNovo;
 
 uses
   Vcl.Forms,
